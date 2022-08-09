@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://letpy.com/app/#/lessons/300.525/q -->
+<html lang="en" translate="no"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="ace-github">.ace-github .ace_gutter {background: #e8e8e8;color: #AAA;}.ace-github  {background: #fff;color: #000;}.ace-github .ace_keyword {font-weight: bold;}.ace-github .ace_string {color: #D14;}.ace-github .ace_variable.ace_class {color: teal;}.ace-github .ace_constant.ace_numeric {color: #099;}.ace-github .ace_constant.ace_buildin {color: #0086B3;}.ace-github .ace_support.ace_function {color: #0086B3;}.ace-github .ace_comment {color: #998;font-style: italic;}.ace-github .ace_variable.ace_language  {color: #900;font-weight: bold;}.ace-github .ace_paren {font-weight: bold;}.ace-github .ace_boolean {font-weight: bold;}.ace-github .ace_string.ace_regexp {color: #009926;font-weight: normal;}.ace-github .ace_variable.ace_instance {color: teal;}.ace-github .ace_constant.ace_language {color: #099;}.ace-github .ace_cursor {color: black;}.ace-github.ace_focus .ace_marker-layer .ace_active-line {background: rgb(255, 255, 204);}.ace-github .ace_marker-layer .ace_active-line {background: rgb(245, 245, 245);}.ace-github .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-github.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-github.ace_nobold .ace_line > span {font-weight: normal !important;}.ace-github .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-github .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-github .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-github .ace_gutter-active-line {background-color : rgba(0, 0, 0, 0.07);}.ace-github .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-github .ace_invisible {color: #BFBFBF}.ace-github .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-github .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-github */</style><style id="ace-monokai">.ace-monokai .ace_gutter {background: #2F3129;color: #8F908A}.ace-monokai .ace_print-margin {width: 1px;background: #555651}.ace-monokai {background-color: #272822;color: #F8F8F2}.ace-monokai .ace_cursor {color: #F8F8F0}.ace-monokai .ace_marker-layer .ace_selection {background: #49483E}.ace-monokai.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #272822;}.ace-monokai .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-monokai .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #49483E}.ace-monokai .ace_marker-layer .ace_active-line {background: #202020}.ace-monokai .ace_gutter-active-line {background-color: #272727}.ace-monokai .ace_marker-layer .ace_selected-word {border: 1px solid #49483E}.ace-monokai .ace_invisible {color: #52524d}.ace-monokai .ace_entity.ace_name.ace_tag,.ace-monokai .ace_keyword,.ace-monokai .ace_meta.ace_tag,.ace-monokai .ace_storage {color: #F92672}.ace-monokai .ace_keyword.ace_operator {color:#fff;}.ace-monokai .ace_punctuation,.ace-monokai .ace_punctuation.ace_tag {color: #fff}.ace-monokai .ace_constant.ace_character,.ace-monokai .ace_constant.ace_language,.ace-monokai .ace_constant.ace_numeric,.ace-monokai .ace_constant.ace_other {color: #AE81FF}.ace-monokai .ace_invalid {color: #F8F8F0;background-color: #F92672}.ace-monokai .ace_invalid.ace_deprecated {color: #F8F8F0;background-color: #AE81FF}.ace-monokai .ace_support.ace_constant,.ace-monokai .ace_support.ace_function {color: #66D9EF}.ace-monokai .ace_fold {background-color: #A6E22E;border-color: #F8F8F2}.ace-monokai .ace_storage.ace_type,.ace-monokai .ace_support.ace_class,.ace-monokai .ace_support.ace_type {font-style: italic;color: #66D9EF}.ace-monokai .ace_entity.ace_name.ace_function,.ace-monokai .ace_entity.ace_other,.ace-monokai .ace_entity.ace_other.ace_attribute-name,.ace-monokai .ace_variable {color: #A6E22E}.ace-monokai .ace_variable.ace_parameter {font-style: italic;color: #FD971F}.ace-monokai .ace_string {color: #E6DB74}.ace-monokai .ace_comment {color: #75715E}.ace-monokai .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ0FD0ZXBzd/wPAAjVAoxeSgNeAAAAAElFTkSuQmCC) right repeat-y}
+/*# sourceURL=ace/css/ace-monokai */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="https://letpy.com/app/favicon.svg"><title>LETPY.COM — Программирование на Python для начинающих.</title><link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./11dars_files/css2" rel="stylesheet"><link rel="stylesheet" href="./11dars_files/css"><link rel="stylesheet" href="./11dars_files/materialdesignicons.min.css"><script type="text/javascript" async="" src="./11dars_files/analytics.js.Без названия"></script><script src="./11dars_files/brython.js.Без названия"></script><script src="./11dars_files/brython_stdlib.js.Без названия"></script><script src="./11dars_files/be_gateway.js.Без названия"></script><style>@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}.bepaid-app{position:fixed;top:0;left:0;width:100%;height:100%;margin:0;z-index:2147483647;border:none;background-color:#fefefe}.primary-button{background-color:#7fffd4}.bepaid-loader{width:100%;margin:0;background-color:#fefefe;font-family:"Noto Sans",sans-serif}.bepaid-iframe{position:fixed;width:100%;height:100%;top:0;left:0;border:none;background-color:rgba(0,0,0,0)}.bepaid-header{display:flex;flex-direction:row;align-items:center;justify-content:space-between;height:46px;background-color:#eceff1;border-bottom:1px solid #cfd8dc}.bepaid-header__price{padding-left:15px;font-weight:500;font-size:20px;color:#212121}.bepaid-header__description{padding-right:10px;flex:1}.bepaid-header__description-text{display:none}.bepaid-header__close{padding-right:15px;font-size:20px;color:#dde2e5;cursor:pointer;transition:all .3s ease-out 0s}.bepaid-header__close:hover{color:#50a6e9}.bepaid-main{display:flex;flex:1;flex-direction:column;padding:0 15px 0 15px;font-size:14px;transition:all .5s ease-out 0s}.bepaid-footer{display:flex;flex-direction:row;align-items:center;justify-content:center;height:60px;background-color:#eceff1;border-top:1px solid #cfd8dc}.bepaid-footer__text{font-weight:300;font-size:11px}.bepaid-spinner{display:flex;justify-content:center;height:100%}.bepaid-spinner svg{margin:auto;animation:spin 2s infinite linear}.bepaid-close{position:fixed;top:10px;right:10px;font-size:20px;color:#dde2e5;background-color:rgba(0,0,0,0);border:none;cursor:pointer;transition:all .3s ease-out 0s}.bepaid-close:hover{color:#50a6e9}.apple-pay-button__apple-pay-block{margin-top:25px;display:flex;flex-direction:column;align-items:center;justify-content:center}@media screen and (max-width: 480px){.bepaid-header{position:absolute;top:0;width:100%}.bepaid-main{position:relative;top:46px}.bepaid-footer{position:absolute;bottom:0;width:100%}}@media screen and (min-width: 481px){.bepaid-app{background-color:rgba(0,0,0,.4)}.bepaid-loader{width:600px;margin:50px auto;box-shadow:0 0 50px 0 rgba(0,0,0,.4);border-radius:3px}.bepaid-header{height:64px;border-top-left-radius:3px;border-top-right-radius:3px}.bepaid-header__price{padding-left:61px}.bepaid-header__description-text{display:block;text-align:right;color:#424242;font-size:12px}.bepaid-header__close{padding-right:61px}.bepaid-main{padding:0 61px 0 61px}.bepaid-footer{border-bottom-left-radius:3px;border-bottom-right-radius:3px}}@supports(-webkit-appearance: -apple-pay-button){.apple-pay-button-with-text{display:inline-block;cursor:pointer;width:100%;height:56px;-webkit-appearance:-apple-pay-button}.apple-pay-button-with-text>*{display:none}.apple-pay-button-black-with-text{-apple-pay-button-style:#000}.apple-pay-button-white-with-text{-apple-pay-button-style:#fff}.apple-pay-button-white-with-line-with-text{-apple-pay-button-style:white-outline}}@supports not (-webkit-appearance: -apple-pay-button){.apple-pay-button-with-text{--apple-pay-scale: 1;display:inline-flex;justify-content:center;font-size:12px;border-radius:5px;padding:0px;box-sizing:border-box;width:100%;height:56px}.apple-pay-button-black-with-text{background-color:#000;color:#fff}.apple-pay-button-white-with-text{background-color:#fff;color:#000}.apple-pay-button-white-with-line-with-text{background-color:#fff;color:#000;border:.5px solid #000}.apple-pay-button-with-text.apple-pay-button-black-with-text>.logo{background-image:-webkit-named-image(apple-pay-logo-white);background-color:#000}.apple-pay-button-with-text.apple-pay-button-white-with-text>.logo{background-image:-webkit-named-image(apple-pay-logo-black);background-color:#fff}.apple-pay-button-with-text.apple-pay-button-white-with-line-with-text>.logo{background-image:-webkit-named-image(apple-pay-logo-black);background-color:#fff}.apple-pay-button-with-text>.text{font-family:-apple-system;font-size:calc(1em*var(--apple-pay-scale));font-weight:300;align-self:center;margin-right:calc(2px*var(--apple-pay-scale))}.apple-pay-button-with-text>.logo{width:calc(35px*var(--scale));height:100%;background-size:100% 60%;background-repeat:no-repeat;background-position:0 50%;margin-left:calc(2px*var(--apple-pay-scale));border:none}}</style><link href="./11dars_files/app.ca0a5d21.css" rel="preload" as="style"><link href="./11dars_files/chunk-vendors.77511e3a.css" rel="preload" as="style"><link href="./11dars_files/app.bd011bea.js.Без названия" rel="preload" as="script"><link href="./11dars_files/chunk-vendors.fbbcacb0.js.Без названия" rel="preload" as="script"><link href="./11dars_files/chunk-vendors.77511e3a.css" rel="stylesheet"><link href="./11dars_files/app.ca0a5d21.css" rel="stylesheet"><style type="text/css">.checkout-modal__overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	overflow-y: auto;
+	/* Выставляем максимальное значение. Окно с 3ds не должно перекрываться другим контентом */
+	z-index: 2147483647;
+}
+
+.checkout-modal-overlay__hidden {
+	background: transparent;
+}
+
+.checkout-modal__container {
+	position: relative;
+	margin-top: 40px;
+	width: 60%;
+	max-height: calc(100vh - 40px);
+	box-sizing: border-box;
+	cursor: default;
+}
+
+.checkout-modal__container {
+	max-width: 460px;
+}
+
+@media (max-width: 600px) {
+	.checkout-modal__container{
+		max-height: none;
+		width: 100%;
+		margin-top: 0;
+		border-radius: 0;
+		padding: 0;
+	}
+}
+
+.checkout-modal-theme__3ds .checkout-modal__content {
+	height: 90vh;
+	overflow-y: auto;
+
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
+}
+
+.checkout-modal__content{
+	overflow-y: auto;
+	box-sizing: border-box;
+	cursor: default;
+}
+
+.checkout-modal-theme__widget .checkout-modal__content{
+	background: transparent;
+	box-shadow: none;
+}
+
+@media (max-width: 600px) {
+	.checkout-modal__content {
+		margin-top: 56px;
+	}
+}
+
+
+.checkout-modal__header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.checkout-modal__close {
+	position: absolute;
+	right: -36px;
+	top: 0;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	cursor: pointer;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	outline: none;
+}
+/* experimental */
+.checkout-modal__close.__hidden {
+	display: none;
+}
+
+@media (max-width: 600px) {
+	.checkout-modal__close {
+		right: 8px;
+		top: 21px;
+	}
+}
+
+.checkout-modal__close:before {
+	content: "\2715";
+	font-size: 25px;
+	font-weight: bold;
+	color: #828282;
+}
+
+@keyframes mmfadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+	from { transform: translateY(15%); }
+	to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+	from { transform: translateY(0); }
+	to { transform: translateY(-10%); }
+}
+
+.checkout-modal.micromodal-slide {
+	display: none;
+}
+
+.checkout-modal.micromodal-slide.is-open {
+	display: block;
+}
+
+.checkout-modal.micromodal-slide[aria-hidden="false"] .checkout-modal__overlay {
+	animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.checkout-modal.micromodal-slide[aria-hidden="false"] .checkout-modal__container {
+	animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.checkout-modal.micromodal-slide[aria-hidden="true"] .checkout-modal__overlay {
+	animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.checkout-modal.micromodal-slide[aria-hidden="true"] .checkout-modal__container {
+	animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.checkout-modal.micromodal-slide .checkout-modal__container,
+.checkout-modal.micromodal-slide .checkout-modal__overlay {
+	will-change: transform;
+}
+</style><style type="text/css">.checkout-waiting-screen {
+	position: relative;
+	margin: 0 auto;
+	max-width: 460px;
+	min-height: 48px;
+}
+
+.checkout-waiting-screen__loader {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 32px;
+	height: 32px;
+	box-sizing: border-box;
+	border: 2px solid transparent;
+	border-top-color: #00A884;
+	border-left-color: #00A884;
+	border-radius: 50%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+	margin-top: calc(32px / -2);
+	margin-left: calc(32px / -2);
+	animation: checkout-widget-spin 1s .21s infinite linear;
+	backface-visibility: hidden;  /* Для ускорения анимации */
+}
+
+@keyframes checkout-widget-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Safari */
+@-webkit-keyframes checkout-widget-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+</style><link rel="preconnect" href="https://yoomoney.ru/checkout/checkout-ui" crossorigin="anonymous"><link href="https://www.googletagmanager.com/" rel="preconnect"><script async="" src="./11dars_files/js"></script><script async="" charset="utf-8" src="./11dars_files/tag.js.Без названия"></script><style type="text/css" id="vuetify-theme-stylesheet">:root {
+  --v-anchor-base: #2196f3;
+  --v-primary-base: #2196f3;
+  --v-primary-lighten5: #d4ffff;
+  --v-primary-lighten4: #b5ffff;
+  --v-primary-lighten3: #95e8ff;
+  --v-primary-lighten2: #75ccff;
+  --v-primary-lighten1: #51b0ff;
+  --v-primary-darken1: #007cd6;
+  --v-primary-darken2: #0064ba;
+  --v-primary-darken3: #004d9f;
+  --v-primary-darken4: #003784;
+  --v-secondary-base: #424242;
+  --v-secondary-lighten5: #c1c1c1;
+  --v-secondary-lighten4: #a6a6a6;
+  --v-secondary-lighten3: #8b8b8b;
+  --v-secondary-lighten2: #727272;
+  --v-secondary-lighten1: #595959;
+  --v-secondary-darken1: #2c2c2c;
+  --v-secondary-darken2: #171717;
+  --v-secondary-darken3: #000000;
+  --v-secondary-darken4: #000000;
+  --v-accent-base: #ff4081;
+  --v-accent-lighten5: #ffd8ff;
+  --v-accent-lighten4: #ffbaed;
+  --v-accent-lighten3: #ff9dd1;
+  --v-accent-lighten2: #ff7fb6;
+  --v-accent-lighten1: #ff619b;
+  --v-accent-darken1: #df1368;
+  --v-accent-darken2: #c00050;
+  --v-accent-darken3: #a1003a;
+  --v-accent-darken4: #820025;
+  --v-error-base: #ff5252;
+  --v-error-lighten5: #ffe4d5;
+  --v-error-lighten4: #ffc6b9;
+  --v-error-lighten3: #ffa99e;
+  --v-error-lighten2: #ff8c84;
+  --v-error-lighten1: #ff6f6a;
+  --v-error-darken1: #df323b;
+  --v-error-darken2: #bf0025;
+  --v-error-darken3: #9f0010;
+  --v-error-darken4: #800000;
+  --v-info-base: #2196f3;
+  --v-info-lighten5: #d4ffff;
+  --v-info-lighten4: #b5ffff;
+  --v-info-lighten3: #95e8ff;
+  --v-info-lighten2: #75ccff;
+  --v-info-lighten1: #51b0ff;
+  --v-info-darken1: #007cd6;
+  --v-info-darken2: #0064ba;
+  --v-info-darken3: #004d9f;
+  --v-info-darken4: #003784;
+  --v-success-base: #4caf50;
+  --v-success-lighten5: #dcffd6;
+  --v-success-lighten4: #beffba;
+  --v-success-lighten3: #a2ff9e;
+  --v-success-lighten2: #85e783;
+  --v-success-lighten1: #69cb69;
+  --v-success-darken1: #2d9437;
+  --v-success-darken2: #00791e;
+  --v-success-darken3: #006000;
+  --v-success-darken4: #004700;
+  --v-warning-base: #fb8c00;
+  --v-warning-lighten5: #ffff9e;
+  --v-warning-lighten4: #fffb82;
+  --v-warning-lighten3: #ffdf67;
+  --v-warning-lighten2: #ffc24b;
+  --v-warning-lighten1: #ffa72d;
+  --v-warning-darken1: #db7200;
+  --v-warning-darken2: #bb5900;
+  --v-warning-darken3: #9d4000;
+  --v-warning-darken4: #802700;
+  --v-background-base: #424242;
+  --v-background-lighten5: #c1c1c1;
+  --v-background-lighten4: #a6a6a6;
+  --v-background-lighten3: #8b8b8b;
+  --v-background-lighten2: #727272;
+  --v-background-lighten1: #595959;
+  --v-background-darken1: #2c2c2c;
+  --v-background-darken2: #171717;
+  --v-background-darken3: #000000;
+  --v-background-darken4: #000000;
+}
+
+.v-application a { color: var(--v-anchor-base); }
+.v-application .primary {
+  background-color: var(--v-primary-base) !important;
+  border-color: var(--v-primary-base) !important;
+}
+.v-application .primary--text {
+  color: var(--v-primary-base) !important;
+  caret-color: var(--v-primary-base) !important;
+}
+.v-application .primary.lighten-5 {
+  background-color: var(--v-primary-lighten5) !important;
+  border-color: var(--v-primary-lighten5) !important;
+}
+.v-application .primary--text.text--lighten-5 {
+  color: var(--v-primary-lighten5) !important;
+  caret-color: var(--v-primary-lighten5) !important;
+}
+.v-application .primary.lighten-4 {
+  background-color: var(--v-primary-lighten4) !important;
+  border-color: var(--v-primary-lighten4) !important;
+}
+.v-application .primary--text.text--lighten-4 {
+  color: var(--v-primary-lighten4) !important;
+  caret-color: var(--v-primary-lighten4) !important;
+}
+.v-application .primary.lighten-3 {
+  background-color: var(--v-primary-lighten3) !important;
+  border-color: var(--v-primary-lighten3) !important;
+}
+.v-application .primary--text.text--lighten-3 {
+  color: var(--v-primary-lighten3) !important;
+  caret-color: var(--v-primary-lighten3) !important;
+}
+.v-application .primary.lighten-2 {
+  background-color: var(--v-primary-lighten2) !important;
+  border-color: var(--v-primary-lighten2) !important;
+}
+.v-application .primary--text.text--lighten-2 {
+  color: var(--v-primary-lighten2) !important;
+  caret-color: var(--v-primary-lighten2) !important;
+}
+.v-application .primary.lighten-1 {
+  background-color: var(--v-primary-lighten1) !important;
+  border-color: var(--v-primary-lighten1) !important;
+}
+.v-application .primary--text.text--lighten-1 {
+  color: var(--v-primary-lighten1) !important;
+  caret-color: var(--v-primary-lighten1) !important;
+}
+.v-application .primary.darken-1 {
+  background-color: var(--v-primary-darken1) !important;
+  border-color: var(--v-primary-darken1) !important;
+}
+.v-application .primary--text.text--darken-1 {
+  color: var(--v-primary-darken1) !important;
+  caret-color: var(--v-primary-darken1) !important;
+}
+.v-application .primary.darken-2 {
+  background-color: var(--v-primary-darken2) !important;
+  border-color: var(--v-primary-darken2) !important;
+}
+.v-application .primary--text.text--darken-2 {
+  color: var(--v-primary-darken2) !important;
+  caret-color: var(--v-primary-darken2) !important;
+}
+.v-application .primary.darken-3 {
+  background-color: var(--v-primary-darken3) !important;
+  border-color: var(--v-primary-darken3) !important;
+}
+.v-application .primary--text.text--darken-3 {
+  color: var(--v-primary-darken3) !important;
+  caret-color: var(--v-primary-darken3) !important;
+}
+.v-application .primary.darken-4 {
+  background-color: var(--v-primary-darken4) !important;
+  border-color: var(--v-primary-darken4) !important;
+}
+.v-application .primary--text.text--darken-4 {
+  color: var(--v-primary-darken4) !important;
+  caret-color: var(--v-primary-darken4) !important;
+}
+.v-application .secondary {
+  background-color: var(--v-secondary-base) !important;
+  border-color: var(--v-secondary-base) !important;
+}
+.v-application .secondary--text {
+  color: var(--v-secondary-base) !important;
+  caret-color: var(--v-secondary-base) !important;
+}
+.v-application .secondary.lighten-5 {
+  background-color: var(--v-secondary-lighten5) !important;
+  border-color: var(--v-secondary-lighten5) !important;
+}
+.v-application .secondary--text.text--lighten-5 {
+  color: var(--v-secondary-lighten5) !important;
+  caret-color: var(--v-secondary-lighten5) !important;
+}
+.v-application .secondary.lighten-4 {
+  background-color: var(--v-secondary-lighten4) !important;
+  border-color: var(--v-secondary-lighten4) !important;
+}
+.v-application .secondary--text.text--lighten-4 {
+  color: var(--v-secondary-lighten4) !important;
+  caret-color: var(--v-secondary-lighten4) !important;
+}
+.v-application .secondary.lighten-3 {
+  background-color: var(--v-secondary-lighten3) !important;
+  border-color: var(--v-secondary-lighten3) !important;
+}
+.v-application .secondary--text.text--lighten-3 {
+  color: var(--v-secondary-lighten3) !important;
+  caret-color: var(--v-secondary-lighten3) !important;
+}
+.v-application .secondary.lighten-2 {
+  background-color: var(--v-secondary-lighten2) !important;
+  border-color: var(--v-secondary-lighten2) !important;
+}
+.v-application .secondary--text.text--lighten-2 {
+  color: var(--v-secondary-lighten2) !important;
+  caret-color: var(--v-secondary-lighten2) !important;
+}
+.v-application .secondary.lighten-1 {
+  background-color: var(--v-secondary-lighten1) !important;
+  border-color: var(--v-secondary-lighten1) !important;
+}
+.v-application .secondary--text.text--lighten-1 {
+  color: var(--v-secondary-lighten1) !important;
+  caret-color: var(--v-secondary-lighten1) !important;
+}
+.v-application .secondary.darken-1 {
+  background-color: var(--v-secondary-darken1) !important;
+  border-color: var(--v-secondary-darken1) !important;
+}
+.v-application .secondary--text.text--darken-1 {
+  color: var(--v-secondary-darken1) !important;
+  caret-color: var(--v-secondary-darken1) !important;
+}
+.v-application .secondary.darken-2 {
+  background-color: var(--v-secondary-darken2) !important;
+  border-color: var(--v-secondary-darken2) !important;
+}
+.v-application .secondary--text.text--darken-2 {
+  color: var(--v-secondary-darken2) !important;
+  caret-color: var(--v-secondary-darken2) !important;
+}
+.v-application .secondary.darken-3 {
+  background-color: var(--v-secondary-darken3) !important;
+  border-color: var(--v-secondary-darken3) !important;
+}
+.v-application .secondary--text.text--darken-3 {
+  color: var(--v-secondary-darken3) !important;
+  caret-color: var(--v-secondary-darken3) !important;
+}
+.v-application .secondary.darken-4 {
+  background-color: var(--v-secondary-darken4) !important;
+  border-color: var(--v-secondary-darken4) !important;
+}
+.v-application .secondary--text.text--darken-4 {
+  color: var(--v-secondary-darken4) !important;
+  caret-color: var(--v-secondary-darken4) !important;
+}
+.v-application .accent {
+  background-color: var(--v-accent-base) !important;
+  border-color: var(--v-accent-base) !important;
+}
+.v-application .accent--text {
+  color: var(--v-accent-base) !important;
+  caret-color: var(--v-accent-base) !important;
+}
+.v-application .accent.lighten-5 {
+  background-color: var(--v-accent-lighten5) !important;
+  border-color: var(--v-accent-lighten5) !important;
+}
+.v-application .accent--text.text--lighten-5 {
+  color: var(--v-accent-lighten5) !important;
+  caret-color: var(--v-accent-lighten5) !important;
+}
+.v-application .accent.lighten-4 {
+  background-color: var(--v-accent-lighten4) !important;
+  border-color: var(--v-accent-lighten4) !important;
+}
+.v-application .accent--text.text--lighten-4 {
+  color: var(--v-accent-lighten4) !important;
+  caret-color: var(--v-accent-lighten4) !important;
+}
+.v-application .accent.lighten-3 {
+  background-color: var(--v-accent-lighten3) !important;
+  border-color: var(--v-accent-lighten3) !important;
+}
+.v-application .accent--text.text--lighten-3 {
+  color: var(--v-accent-lighten3) !important;
+  caret-color: var(--v-accent-lighten3) !important;
+}
+.v-application .accent.lighten-2 {
+  background-color: var(--v-accent-lighten2) !important;
+  border-color: var(--v-accent-lighten2) !important;
+}
+.v-application .accent--text.text--lighten-2 {
+  color: var(--v-accent-lighten2) !important;
+  caret-color: var(--v-accent-lighten2) !important;
+}
+.v-application .accent.lighten-1 {
+  background-color: var(--v-accent-lighten1) !important;
+  border-color: var(--v-accent-lighten1) !important;
+}
+.v-application .accent--text.text--lighten-1 {
+  color: var(--v-accent-lighten1) !important;
+  caret-color: var(--v-accent-lighten1) !important;
+}
+.v-application .accent.darken-1 {
+  background-color: var(--v-accent-darken1) !important;
+  border-color: var(--v-accent-darken1) !important;
+}
+.v-application .accent--text.text--darken-1 {
+  color: var(--v-accent-darken1) !important;
+  caret-color: var(--v-accent-darken1) !important;
+}
+.v-application .accent.darken-2 {
+  background-color: var(--v-accent-darken2) !important;
+  border-color: var(--v-accent-darken2) !important;
+}
+.v-application .accent--text.text--darken-2 {
+  color: var(--v-accent-darken2) !important;
+  caret-color: var(--v-accent-darken2) !important;
+}
+.v-application .accent.darken-3 {
+  background-color: var(--v-accent-darken3) !important;
+  border-color: var(--v-accent-darken3) !important;
+}
+.v-application .accent--text.text--darken-3 {
+  color: var(--v-accent-darken3) !important;
+  caret-color: var(--v-accent-darken3) !important;
+}
+.v-application .accent.darken-4 {
+  background-color: var(--v-accent-darken4) !important;
+  border-color: var(--v-accent-darken4) !important;
+}
+.v-application .accent--text.text--darken-4 {
+  color: var(--v-accent-darken4) !important;
+  caret-color: var(--v-accent-darken4) !important;
+}
+.v-application .error {
+  background-color: var(--v-error-base) !important;
+  border-color: var(--v-error-base) !important;
+}
+.v-application .error--text {
+  color: var(--v-error-base) !important;
+  caret-color: var(--v-error-base) !important;
+}
+.v-application .error.lighten-5 {
+  background-color: var(--v-error-lighten5) !important;
+  border-color: var(--v-error-lighten5) !important;
+}
+.v-application .error--text.text--lighten-5 {
+  color: var(--v-error-lighten5) !important;
+  caret-color: var(--v-error-lighten5) !important;
+}
+.v-application .error.lighten-4 {
+  background-color: var(--v-error-lighten4) !important;
+  border-color: var(--v-error-lighten4) !important;
+}
+.v-application .error--text.text--lighten-4 {
+  color: var(--v-error-lighten4) !important;
+  caret-color: var(--v-error-lighten4) !important;
+}
+.v-application .error.lighten-3 {
+  background-color: var(--v-error-lighten3) !important;
+  border-color: var(--v-error-lighten3) !important;
+}
+.v-application .error--text.text--lighten-3 {
+  color: var(--v-error-lighten3) !important;
+  caret-color: var(--v-error-lighten3) !important;
+}
+.v-application .error.lighten-2 {
+  background-color: var(--v-error-lighten2) !important;
+  border-color: var(--v-error-lighten2) !important;
+}
+.v-application .error--text.text--lighten-2 {
+  color: var(--v-error-lighten2) !important;
+  caret-color: var(--v-error-lighten2) !important;
+}
+.v-application .error.lighten-1 {
+  background-color: var(--v-error-lighten1) !important;
+  border-color: var(--v-error-lighten1) !important;
+}
+.v-application .error--text.text--lighten-1 {
+  color: var(--v-error-lighten1) !important;
+  caret-color: var(--v-error-lighten1) !important;
+}
+.v-application .error.darken-1 {
+  background-color: var(--v-error-darken1) !important;
+  border-color: var(--v-error-darken1) !important;
+}
+.v-application .error--text.text--darken-1 {
+  color: var(--v-error-darken1) !important;
+  caret-color: var(--v-error-darken1) !important;
+}
+.v-application .error.darken-2 {
+  background-color: var(--v-error-darken2) !important;
+  border-color: var(--v-error-darken2) !important;
+}
+.v-application .error--text.text--darken-2 {
+  color: var(--v-error-darken2) !important;
+  caret-color: var(--v-error-darken2) !important;
+}
+.v-application .error.darken-3 {
+  background-color: var(--v-error-darken3) !important;
+  border-color: var(--v-error-darken3) !important;
+}
+.v-application .error--text.text--darken-3 {
+  color: var(--v-error-darken3) !important;
+  caret-color: var(--v-error-darken3) !important;
+}
+.v-application .error.darken-4 {
+  background-color: var(--v-error-darken4) !important;
+  border-color: var(--v-error-darken4) !important;
+}
+.v-application .error--text.text--darken-4 {
+  color: var(--v-error-darken4) !important;
+  caret-color: var(--v-error-darken4) !important;
+}
+.v-application .info {
+  background-color: var(--v-info-base) !important;
+  border-color: var(--v-info-base) !important;
+}
+.v-application .info--text {
+  color: var(--v-info-base) !important;
+  caret-color: var(--v-info-base) !important;
+}
+.v-application .info.lighten-5 {
+  background-color: var(--v-info-lighten5) !important;
+  border-color: var(--v-info-lighten5) !important;
+}
+.v-application .info--text.text--lighten-5 {
+  color: var(--v-info-lighten5) !important;
+  caret-color: var(--v-info-lighten5) !important;
+}
+.v-application .info.lighten-4 {
+  background-color: var(--v-info-lighten4) !important;
+  border-color: var(--v-info-lighten4) !important;
+}
+.v-application .info--text.text--lighten-4 {
+  color: var(--v-info-lighten4) !important;
+  caret-color: var(--v-info-lighten4) !important;
+}
+.v-application .info.lighten-3 {
+  background-color: var(--v-info-lighten3) !important;
+  border-color: var(--v-info-lighten3) !important;
+}
+.v-application .info--text.text--lighten-3 {
+  color: var(--v-info-lighten3) !important;
+  caret-color: var(--v-info-lighten3) !important;
+}
+.v-application .info.lighten-2 {
+  background-color: var(--v-info-lighten2) !important;
+  border-color: var(--v-info-lighten2) !important;
+}
+.v-application .info--text.text--lighten-2 {
+  color: var(--v-info-lighten2) !important;
+  caret-color: var(--v-info-lighten2) !important;
+}
+.v-application .info.lighten-1 {
+  background-color: var(--v-info-lighten1) !important;
+  border-color: var(--v-info-lighten1) !important;
+}
+.v-application .info--text.text--lighten-1 {
+  color: var(--v-info-lighten1) !important;
+  caret-color: var(--v-info-lighten1) !important;
+}
+.v-application .info.darken-1 {
+  background-color: var(--v-info-darken1) !important;
+  border-color: var(--v-info-darken1) !important;
+}
+.v-application .info--text.text--darken-1 {
+  color: var(--v-info-darken1) !important;
+  caret-color: var(--v-info-darken1) !important;
+}
+.v-application .info.darken-2 {
+  background-color: var(--v-info-darken2) !important;
+  border-color: var(--v-info-darken2) !important;
+}
+.v-application .info--text.text--darken-2 {
+  color: var(--v-info-darken2) !important;
+  caret-color: var(--v-info-darken2) !important;
+}
+.v-application .info.darken-3 {
+  background-color: var(--v-info-darken3) !important;
+  border-color: var(--v-info-darken3) !important;
+}
+.v-application .info--text.text--darken-3 {
+  color: var(--v-info-darken3) !important;
+  caret-color: var(--v-info-darken3) !important;
+}
+.v-application .info.darken-4 {
+  background-color: var(--v-info-darken4) !important;
+  border-color: var(--v-info-darken4) !important;
+}
+.v-application .info--text.text--darken-4 {
+  color: var(--v-info-darken4) !important;
+  caret-color: var(--v-info-darken4) !important;
+}
+.v-application .success {
+  background-color: var(--v-success-base) !important;
+  border-color: var(--v-success-base) !important;
+}
+.v-application .success--text {
+  color: var(--v-success-base) !important;
+  caret-color: var(--v-success-base) !important;
+}
+.v-application .success.lighten-5 {
+  background-color: var(--v-success-lighten5) !important;
+  border-color: var(--v-success-lighten5) !important;
+}
+.v-application .success--text.text--lighten-5 {
+  color: var(--v-success-lighten5) !important;
+  caret-color: var(--v-success-lighten5) !important;
+}
+.v-application .success.lighten-4 {
+  background-color: var(--v-success-lighten4) !important;
+  border-color: var(--v-success-lighten4) !important;
+}
+.v-application .success--text.text--lighten-4 {
+  color: var(--v-success-lighten4) !important;
+  caret-color: var(--v-success-lighten4) !important;
+}
+.v-application .success.lighten-3 {
+  background-color: var(--v-success-lighten3) !important;
+  border-color: var(--v-success-lighten3) !important;
+}
+.v-application .success--text.text--lighten-3 {
+  color: var(--v-success-lighten3) !important;
+  caret-color: var(--v-success-lighten3) !important;
+}
+.v-application .success.lighten-2 {
+  background-color: var(--v-success-lighten2) !important;
+  border-color: var(--v-success-lighten2) !important;
+}
+.v-application .success--text.text--lighten-2 {
+  color: var(--v-success-lighten2) !important;
+  caret-color: var(--v-success-lighten2) !important;
+}
+.v-application .success.lighten-1 {
+  background-color: var(--v-success-lighten1) !important;
+  border-color: var(--v-success-lighten1) !important;
+}
+.v-application .success--text.text--lighten-1 {
+  color: var(--v-success-lighten1) !important;
+  caret-color: var(--v-success-lighten1) !important;
+}
+.v-application .success.darken-1 {
+  background-color: var(--v-success-darken1) !important;
+  border-color: var(--v-success-darken1) !important;
+}
+.v-application .success--text.text--darken-1 {
+  color: var(--v-success-darken1) !important;
+  caret-color: var(--v-success-darken1) !important;
+}
+.v-application .success.darken-2 {
+  background-color: var(--v-success-darken2) !important;
+  border-color: var(--v-success-darken2) !important;
+}
+.v-application .success--text.text--darken-2 {
+  color: var(--v-success-darken2) !important;
+  caret-color: var(--v-success-darken2) !important;
+}
+.v-application .success.darken-3 {
+  background-color: var(--v-success-darken3) !important;
+  border-color: var(--v-success-darken3) !important;
+}
+.v-application .success--text.text--darken-3 {
+  color: var(--v-success-darken3) !important;
+  caret-color: var(--v-success-darken3) !important;
+}
+.v-application .success.darken-4 {
+  background-color: var(--v-success-darken4) !important;
+  border-color: var(--v-success-darken4) !important;
+}
+.v-application .success--text.text--darken-4 {
+  color: var(--v-success-darken4) !important;
+  caret-color: var(--v-success-darken4) !important;
+}
+.v-application .warning {
+  background-color: var(--v-warning-base) !important;
+  border-color: var(--v-warning-base) !important;
+}
+.v-application .warning--text {
+  color: var(--v-warning-base) !important;
+  caret-color: var(--v-warning-base) !important;
+}
+.v-application .warning.lighten-5 {
+  background-color: var(--v-warning-lighten5) !important;
+  border-color: var(--v-warning-lighten5) !important;
+}
+.v-application .warning--text.text--lighten-5 {
+  color: var(--v-warning-lighten5) !important;
+  caret-color: var(--v-warning-lighten5) !important;
+}
+.v-application .warning.lighten-4 {
+  background-color: var(--v-warning-lighten4) !important;
+  border-color: var(--v-warning-lighten4) !important;
+}
+.v-application .warning--text.text--lighten-4 {
+  color: var(--v-warning-lighten4) !important;
+  caret-color: var(--v-warning-lighten4) !important;
+}
+.v-application .warning.lighten-3 {
+  background-color: var(--v-warning-lighten3) !important;
+  border-color: var(--v-warning-lighten3) !important;
+}
+.v-application .warning--text.text--lighten-3 {
+  color: var(--v-warning-lighten3) !important;
+  caret-color: var(--v-warning-lighten3) !important;
+}
+.v-application .warning.lighten-2 {
+  background-color: var(--v-warning-lighten2) !important;
+  border-color: var(--v-warning-lighten2) !important;
+}
+.v-application .warning--text.text--lighten-2 {
+  color: var(--v-warning-lighten2) !important;
+  caret-color: var(--v-warning-lighten2) !important;
+}
+.v-application .warning.lighten-1 {
+  background-color: var(--v-warning-lighten1) !important;
+  border-color: var(--v-warning-lighten1) !important;
+}
+.v-application .warning--text.text--lighten-1 {
+  color: var(--v-warning-lighten1) !important;
+  caret-color: var(--v-warning-lighten1) !important;
+}
+.v-application .warning.darken-1 {
+  background-color: var(--v-warning-darken1) !important;
+  border-color: var(--v-warning-darken1) !important;
+}
+.v-application .warning--text.text--darken-1 {
+  color: var(--v-warning-darken1) !important;
+  caret-color: var(--v-warning-darken1) !important;
+}
+.v-application .warning.darken-2 {
+  background-color: var(--v-warning-darken2) !important;
+  border-color: var(--v-warning-darken2) !important;
+}
+.v-application .warning--text.text--darken-2 {
+  color: var(--v-warning-darken2) !important;
+  caret-color: var(--v-warning-darken2) !important;
+}
+.v-application .warning.darken-3 {
+  background-color: var(--v-warning-darken3) !important;
+  border-color: var(--v-warning-darken3) !important;
+}
+.v-application .warning--text.text--darken-3 {
+  color: var(--v-warning-darken3) !important;
+  caret-color: var(--v-warning-darken3) !important;
+}
+.v-application .warning.darken-4 {
+  background-color: var(--v-warning-darken4) !important;
+  border-color: var(--v-warning-darken4) !important;
+}
+.v-application .warning--text.text--darken-4 {
+  color: var(--v-warning-darken4) !important;
+  caret-color: var(--v-warning-darken4) !important;
+}
+.v-application .background {
+  background-color: var(--v-background-base) !important;
+  border-color: var(--v-background-base) !important;
+}
+.v-application .background--text {
+  color: var(--v-background-base) !important;
+  caret-color: var(--v-background-base) !important;
+}
+.v-application .background.lighten-5 {
+  background-color: var(--v-background-lighten5) !important;
+  border-color: var(--v-background-lighten5) !important;
+}
+.v-application .background--text.text--lighten-5 {
+  color: var(--v-background-lighten5) !important;
+  caret-color: var(--v-background-lighten5) !important;
+}
+.v-application .background.lighten-4 {
+  background-color: var(--v-background-lighten4) !important;
+  border-color: var(--v-background-lighten4) !important;
+}
+.v-application .background--text.text--lighten-4 {
+  color: var(--v-background-lighten4) !important;
+  caret-color: var(--v-background-lighten4) !important;
+}
+.v-application .background.lighten-3 {
+  background-color: var(--v-background-lighten3) !important;
+  border-color: var(--v-background-lighten3) !important;
+}
+.v-application .background--text.text--lighten-3 {
+  color: var(--v-background-lighten3) !important;
+  caret-color: var(--v-background-lighten3) !important;
+}
+.v-application .background.lighten-2 {
+  background-color: var(--v-background-lighten2) !important;
+  border-color: var(--v-background-lighten2) !important;
+}
+.v-application .background--text.text--lighten-2 {
+  color: var(--v-background-lighten2) !important;
+  caret-color: var(--v-background-lighten2) !important;
+}
+.v-application .background.lighten-1 {
+  background-color: var(--v-background-lighten1) !important;
+  border-color: var(--v-background-lighten1) !important;
+}
+.v-application .background--text.text--lighten-1 {
+  color: var(--v-background-lighten1) !important;
+  caret-color: var(--v-background-lighten1) !important;
+}
+.v-application .background.darken-1 {
+  background-color: var(--v-background-darken1) !important;
+  border-color: var(--v-background-darken1) !important;
+}
+.v-application .background--text.text--darken-1 {
+  color: var(--v-background-darken1) !important;
+  caret-color: var(--v-background-darken1) !important;
+}
+.v-application .background.darken-2 {
+  background-color: var(--v-background-darken2) !important;
+  border-color: var(--v-background-darken2) !important;
+}
+.v-application .background--text.text--darken-2 {
+  color: var(--v-background-darken2) !important;
+  caret-color: var(--v-background-darken2) !important;
+}
+.v-application .background.darken-3 {
+  background-color: var(--v-background-darken3) !important;
+  border-color: var(--v-background-darken3) !important;
+}
+.v-application .background--text.text--darken-3 {
+  color: var(--v-background-darken3) !important;
+  caret-color: var(--v-background-darken3) !important;
+}
+.v-application .background.darken-4 {
+  background-color: var(--v-background-darken4) !important;
+  border-color: var(--v-background-darken4) !important;
+}
+.v-application .background--text.text--darken-4 {
+  color: var(--v-background-darken4) !important;
+  caret-color: var(--v-background-darken4) !important;
+}</style><style type="text/css">.infinite-loading-container[data-v-644ea9c9]{clear:both;text-align:center}.infinite-loading-container[data-v-644ea9c9] [class^=loading-]{display:inline-block;margin:5px 0;width:28px;height:28px;font-size:28px;line-height:28px;border-radius:50%}.btn-try-infinite[data-v-644ea9c9]{margin-top:5px;padding:5px 10px;color:#999;font-size:14px;line-height:1;background:transparent;border:1px solid #ccc;border-radius:3px;outline:none;cursor:pointer}.btn-try-infinite[data-v-644ea9c9]:not(:active):hover{opacity:.8}</style></head><body onload="brython(1);" style=""><noscript><strong>We're sorry but letpy_app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div data-app="true" class="v-application v-application--is-ltr theme--dark" id="app"><div class="v-application--wrap"><div class="ide"><header class="v-sheet v-sheet--outlined theme--dark v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar v-app-bar--clipped v-app-bar--fixed" data-booted="true" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;"><div class="v-toolbar__content" style="height: 48px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--dark v-size--small grey--text" small="" color="grey"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-file-tree theme--dark"></i></span></button><span class="v-tooltip v-tooltip--bottom"></span><img src="./11dars_files/logo-light.56f86d1e.png" aria-haspopup="true" aria-expanded="false" class="app-logo"><div class="spacer"></div><button type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small green--text"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-play theme--dark"></i></span></button><!----><button type="button" class="v-btn v-btn--disabled v-btn--icon v-btn--round theme--dark v-size--small" disabled="disabled"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-stop theme--dark"></i></span></button><div class="spacer"></div><div class="spacer"></div><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small grey--text"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-book-open-variant theme--dark"></i></span></button><span class="v-badge v-badge--overlap theme--dark"><button type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-bell theme--dark"></i></span></button><span class="v-badge__wrapper"><span aria-atomic="true" aria-label="Badge" aria-live="polite" role="status" class="v-badge__badge red" style="inset: auto auto calc(100% - 12px) calc(100% - 12px); display: none;"></span></span></span><div class="v-menu"><!----></div><button type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--default"><span class="v-btn__content"><div class="v-avatar primary" role="button" aria-haspopup="true" aria-expanded="false" style="height: 30px; min-width: 30px; width: 30px;"><span class="white--text headline" style="font-size: 1rem !important;">KO</span></div></span></button></div></header><nav class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed theme--dark" data-booted="true" style="height: calc((100vh - 48px) - 193px); top: 48px; max-height: calc(100% - 48px); transform: translateX(-100%); width: 200px;"><div class="v-navigation-drawer__content"><header class="v-sheet theme--dark v-toolbar v-toolbar--dense v-toolbar--flat transparent" style="height: 48px;"><div class="v-toolbar__content" style="height: 48px;"><div class="v-toolbar__title subtitle-2"> Мои файлы </div><div class="spacer"></div><div class="v-menu"><!----></div><button type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--default grey--text" role="button" aria-haspopup="true" aria-expanded="false"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus theme--dark"></i></span></button></div></header><section><div class="sl-vue-tree sl-vue-tree-root"><div class="sl-vue-tree-nodes-list"><div class="sl-vue-tree-node"><div class="sl-vue-tree-cursor sl-vue-tree-cursor_before" style="visibility: hidden; --depth:0;"></div> <div path="[0]" class="sl-vue-tree-node-item sl-vue-tree-node-is-leaf"> <!----> <div class="sl-vue-tree-title"><!----> <i aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px; padding-left: 24px;"></i><span style="padding-left: 5px; opacity: 0.7;">hello.py</span> <!----></div> <div class="sl-vue-tree-sidebar"></div></div> <!----> <div class="sl-vue-tree-cursor sl-vue-tree-cursor_after" style="visibility: hidden; --depth:0;"></div></div><div class="sl-vue-tree-node"><div class="sl-vue-tree-cursor sl-vue-tree-cursor_before" style="visibility: hidden; --depth:0;"></div> <div path="[1]" class="sl-vue-tree-node-item sl-vue-tree-node-is-leaf"> <!----> <div class="sl-vue-tree-title"><!----> <i aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px; padding-left: 24px;"></i><span style="padding-left: 5px; opacity: 0.7;">vars.py</span> <!----></div> <div class="sl-vue-tree-sidebar"></div></div> <!----> <div class="sl-vue-tree-cursor sl-vue-tree-cursor_after" style="visibility: hidden; --depth:0;"></div></div><div class="sl-vue-tree-node"><div class="sl-vue-tree-cursor sl-vue-tree-cursor_before" style="visibility: hidden; --depth:0;"></div> <div path="[2]" class="sl-vue-tree-node-item sl-vue-tree-node-is-leaf"> <!----> <div class="sl-vue-tree-title"><!----> <i aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px; padding-left: 24px;"></i><span style="padding-left: 5px; opacity: 0.7;">first.py</span> <!----></div> <div class="sl-vue-tree-sidebar"></div></div> <!----> <div class="sl-vue-tree-cursor sl-vue-tree-cursor_after" style="visibility: hidden; --depth:0;"></div></div><div class="sl-vue-tree-node"><div class="sl-vue-tree-cursor sl-vue-tree-cursor_before" style="visibility: hidden; --depth:0;"></div> <div path="[3]" class="sl-vue-tree-node-item sl-vue-tree-node-is-leaf"> <!----> <div class="sl-vue-tree-title"><!----> <i aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px; padding-left: 24px;"></i><span style="padding-left: 5px; opacity: 0.7;">dars9.py</span> <!----></div> <div class="sl-vue-tree-sidebar"></div></div> <!----> <div class="sl-vue-tree-cursor sl-vue-tree-cursor_after" style="visibility: hidden; --depth:0;"></div></div><div class="sl-vue-tree-node"><div class="sl-vue-tree-cursor sl-vue-tree-cursor_before" style="visibility: hidden; --depth:0;"></div> <div path="[4]" class="sl-vue-tree-node-item sl-vue-tree-node-is-leaf"> <!----> <div class="sl-vue-tree-title"><!----> <i aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px; padding-left: 24px;"></i><span style="padding-left: 5px; opacity: 0.7;">takrorlash.py</span> <!----></div> <div class="sl-vue-tree-sidebar"></div></div> <!----> <div class="sl-vue-tree-cursor sl-vue-tree-cursor_after" style="visibility: hidden; --depth:0;"></div></div><div class="sl-vue-tree-node"><div class="sl-vue-tree-cursor sl-vue-tree-cursor_before" style="visibility: hidden; --depth:0;"></div> <div path="[5]" class="sl-vue-tree-node-item sl-vue-tree-node-is-leaf"> <!----> <div class="sl-vue-tree-title"><!----> <i aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px; padding-left: 24px;"></i><span style="padding-left: 5px; opacity: 0.7;">dars10.py</span> <!----></div> <div class="sl-vue-tree-sidebar"></div></div> <!----> <div class="sl-vue-tree-cursor sl-vue-tree-cursor_after" style="visibility: hidden; --depth:0;"></div></div><div class="sl-vue-tree-node"><div class="sl-vue-tree-cursor sl-vue-tree-cursor_before" style="visibility: hidden; --depth:0;"></div> <div path="[6]" class="sl-vue-tree-node-item sl-vue-tree-node-is-leaf"> <!----> <div class="sl-vue-tree-title"><!----> <i aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px; padding-left: 24px;"></i><span style="padding-left: 5px; opacity: 0.7;">dars11.py</span> <!----></div> <div class="sl-vue-tree-sidebar"></div></div> <!----> <div class="sl-vue-tree-cursor sl-vue-tree-cursor_after" style="visibility: hidden; --depth:0;"></div></div> <div class="sl-vue-tree-drag-info" style="display: none;">
+        Items: 0
+      </div></div></div><div class="v-menu"><!----></div><div role="dialog" class="v-dialog__container"><!----></div></section></div><div class="v-navigation-drawer__border"></div></nav><section data-v-7a974f1e="" style="margin-left: 0px; margin-right: 0px; transition: all 0.2s ease 0s; margin-top: 48px;"><ul data-v-7a974f1e="" class="editorTabs"><li data-v-7a974f1e="" class="active"><div data-v-7a974f1e=""><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px;"></i></div><span data-v-7a974f1e="" class="v-tooltip v-tooltip--bottom"></span><div data-v-7a974f1e="" aria-haspopup="true" aria-expanded="false" class="pl-2 d-flex file"><div data-v-7a974f1e="" class="name">hello.py </div><div data-v-7a974f1e="">*</div></div><button data-v-7a974f1e="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></li><li data-v-7a974f1e="" class=""><div data-v-7a974f1e=""><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px;"></i></div><span data-v-7a974f1e="" class="v-tooltip v-tooltip--bottom"><!----></span><div data-v-7a974f1e="" aria-haspopup="true" aria-expanded="false" class="pl-2 d-flex file"><div data-v-7a974f1e="" class="name">vars.py </div><!----></div><button data-v-7a974f1e="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></li><li data-v-7a974f1e="" class=""><div data-v-7a974f1e=""><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px;"></i></div><span data-v-7a974f1e="" class="v-tooltip v-tooltip--bottom"><!----></span><div data-v-7a974f1e="" aria-haspopup="true" aria-expanded="false" class="pl-2 d-flex file"><div data-v-7a974f1e="" class="name">first.py </div><!----></div><button data-v-7a974f1e="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></li><li data-v-7a974f1e="" class=""><div data-v-7a974f1e=""><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px;"></i></div><span data-v-7a974f1e="" class="v-tooltip v-tooltip--bottom"><!----></span><div data-v-7a974f1e="" aria-haspopup="true" aria-expanded="false" class="pl-2 d-flex file"><div data-v-7a974f1e="" class="name">dars9.py </div><!----></div><button data-v-7a974f1e="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></li><li data-v-7a974f1e="" class=""><div data-v-7a974f1e=""><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px;"></i></div><span data-v-7a974f1e="" class="v-tooltip v-tooltip--bottom"></span><div data-v-7a974f1e="" aria-haspopup="true" aria-expanded="false" class="pl-2 d-flex file"><div data-v-7a974f1e="" class="name">dars10.py </div><!----></div><button data-v-7a974f1e="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></li><li data-v-7a974f1e="" class=""><div data-v-7a974f1e=""><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-language-python theme--dark orange--text text--lighten-1" style="font-size: 20px;"></i></div><span data-v-7a974f1e="" class="v-tooltip v-tooltip--bottom"></span><div data-v-7a974f1e="" aria-haspopup="true" aria-expanded="false" class="pl-2 d-flex file"><div data-v-7a974f1e="" class="name">dars11.py </div><div data-v-7a974f1e="">*</div></div><button data-v-7a974f1e="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i data-v-7a974f1e="" aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></li></ul></section><div style="height: calc(100vh - 88px - 193px); min-height: none;width: calc(100% - 0px - 0px); font-size: 18px; left: 0px; right: 0px; bottom: 193px; top: 0; transition: none; z-index: 0" class=" ace_editor ace-monokai ace_dark"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; font-size: 1px; top: 24px; left: 60px; height: 1px; width: 1px;"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 56px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; top: 0px; left: 0px; width: 56px;"><div class="ace_gutter-cell ace_gutter-active-line " style="height: 24px; top: 0px;">1<span style="display: none; height: 24px;" class="ace_fold-widget ace_start ace_open"></span></div></div></div><div class="ace_scroller" style="line-height: 24px; left: 56px; right: 0px; bottom: 0px;"><div class="ace_content" style="top: 0px; left: 0px; width: 1463px; height: 110px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 868px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height: 24px; top: 0px; left: 0px; right: 0px;"></div></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; top: 0px; left: 0px;"><div class="ace_line" style="height: 24px; top: 0px;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; top: 0px; left: 4px; width: 11px; height: 24px; animation-duration: 1000ms;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="width: 15px; bottom: 0px; display: none;"><div class="ace_scrollbar-inner" style="width: 15px; height: 24px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 15px; left: 56px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 15px; width: 1463px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div><!----><!----><!----><!----><!----><!----><section><nav class="side-content v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--right theme--dark" data-booted="true" style="height: 100vh; top: 48px; max-height: calc(100% - 48px); transform: translateX(100%); width: 0px; z-index: 6;"><div class="v-navigation-drawer__content"><section data-v-25208612="" class="monokai-sublime-theme"><div data-v-25208612="" class="v-card v-card--flat v-sheet theme--dark"><div data-v-25208612="" class="v-card__actions pa-4 pb-0"><div data-v-25208612="" class="title">Что дальше?&nbsp;<span data-v-25208612="">#<span data-v-25208612="">26</span></span></div><div data-v-25208612="" class="spacer"></div><span data-v-25208612="" class="v-tooltip v-tooltip--left"><!----></span><button data-v-25208612="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--default" aria-haspopup="true" aria-expanded="false"><span class="v-btn__content"><i data-v-25208612="" aria-hidden="true" class="v-icon notranslate mdi mdi-bookmark-outline theme--dark"></i></span></button></div><!----><div data-v-25208612="" class="v-card__text body-1"><div data-v-37e59d2d="" data-v-25208612=""><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">Итак, первые программы на&nbsp;Python написаны. Да, они довольно просты. Но&nbsp;вы сделали первый шаг, а&nbsp;это самое главное. Ведь большое путешествие всегда начинается с&nbsp;первого шага, верно?</p></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">У&nbsp;многих прошедших пробную часть LETPY, возникают вопросы о&nbsp;дальнейшем обучении. Здесь я отвечу на&nbsp;самые частые из&nbsp;них.</p></div><div data-v-37e59d2d=""><h3 data-v-37e59d2d="" class="text-h6 mb-2">Что я буду знать после того, как я пройду курс целиком?</h3></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">Вы будете знать основные понятия языка, типы и&nbsp;структуры данных. Научитесь пользоваться управляющими конструкциями, циклами и&nbsp;встроенными функциям. Узнаете, как писать собственные функции и&nbsp;классы, а&nbsp;также работать с&nbsp;файлами и&nbsp;сторонними API. Разумеется, на&nbsp;каждую из&nbsp;тем вы напишете программу, чтобы закрепить знания на&nbsp;практике.</p></div><div data-v-37e59d2d=""><h3 data-v-37e59d2d="" class="text-h6 mb-2">Какой у&nbsp;меня будет уровень? Junior, middle или senior?</h3></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">Деление на&nbsp;уровни junior, middle и&nbsp;senior очень условное. Все зависит от&nbsp;области разработки, компании и&nbsp;даже команды. Например, в&nbsp;одной компании вы уже middle-разработчик, а&nbsp;в&nbsp;другой не&nbsp;дотягиваете и&nbsp;до&nbsp;junior. Наш курс не&nbsp;про уровни разработчиков. Он про основы программирования на&nbsp;Python.</p></div><div data-v-37e59d2d=""><h3 data-v-37e59d2d="" class="text-h6 mb-2">Будет&nbsp;ли полезен ваш курс в&nbsp;Data Science/Автоматизации/Веб-разработке и&nbsp;т.&nbsp;д.?</h3></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">Безусловно. Основы важны в&nbsp;любой области, ведь Python везде один и&nbsp;тот&nbsp;же. Могут быть разные библиотеки, архитектура, окружение, но&nbsp;базовые принципы везде одинаковы.</p></div><div data-v-37e59d2d=""><h3 data-v-37e59d2d="" class="text-h6 mb-2">Смогу&nbsp;ли я найти работу или брать проекты на&nbsp;заказ?</h3></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">Понадобится изучить дополнительные библиотеки. А&nbsp;вот какие&nbsp;— сильно зависит от&nbsp;области, в&nbsp;которой
+вы будете искать работу или проекты. Точно можно сказать, что изучить библиотеку, зная основы, будет вполне по&nbsp;силам.</p></div><div data-v-37e59d2d=""><h3 data-v-37e59d2d="" class="text-h6 mb-2">Ваша программа обучения такая&nbsp;же, как у&nbsp;всех. Чем вы отличаетесь от&nbsp;остальных?</h3></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">На&nbsp;самом деле ни&nbsp;в&nbsp;одном курсе нет секретных знаний и&nbsp;программа обучения основам Python
+одинакова практически у&nbsp;всех. Мы отличаемся тем, что объединили учебный материал и&nbsp;онлайн-тренажер с&nbsp;проверкой задач в&nbsp;единое целое. Кстати, аналогов для некоторых наших задач с&nbsp;проверкой
+в&nbsp;онлайн-тренажере нет ни&nbsp;на&nbsp;одной учебной платформе. У&nbsp;большинства онлайн-тренажеров не&nbsp;работает даже функция пользовательского ввода <code class="inline python hljs"><span class="hljs-built_in">input</span></code> из&nbsp;прошлого урока, что уж&nbsp;говорить о&nbsp;программах с&nbsp;анимацией.</p></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">А&nbsp;вообще в&nbsp;Интернете тонны бесплатной информации, и&nbsp;вы вполне можете все изучить без каких‑либо курсов. Это, однако, будет не&nbsp;так удобно. Многие заканчивают даже не&nbsp;установив Python на&nbsp;компьютер.</p></div><div data-v-37e59d2d=""><h3 data-v-37e59d2d="" class="text-h6 mb-2">Доступны&nbsp;ли пройденные уроки после окончания подписки?</h3></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="font-weight-regular subheading">Да, все пройденные уроки будут доступны даже после окончания подписки и&nbsp;при желании их можно будет пройти еще раз.</p></div><div data-v-37e59d2d=""><p data-v-37e59d2d="" class="pt-3">
+Остались вопросы? Смело задавайте их под уроком!
+</p></div></div></div><!----><!----><!----><!----><div data-v-25208612="" class="v-card__actions"><a data-v-25208612="" href="https://letpy.com/app/#/lessons/300.500" class="v-btn v-btn--icon v-btn--round v-btn--router theme--dark v-size--default"><span class="v-btn__content"><i data-v-25208612="" aria-hidden="true" class="v-icon notranslate mdi mdi-arrow-left theme--dark"></i></span></a><div data-v-25208612="" class="spacer"></div><!----><button data-v-25208612="" type="button" class="v-btn v-btn--text theme--dark v-size--default"><span class="v-btn__content">Дальше</span></button><div data-v-25208612="" class="v-list-item__action"><button data-v-25208612="" type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--default" role="button" aria-haspopup="true" aria-expanded="false"><span class="v-btn__content"><i data-v-25208612="" aria-hidden="true" class="v-icon notranslate mdi mdi-dots-vertical theme--dark"></i></span></button><div data-v-25208612="" class="v-menu"><!----></div></div></div><div data-v-25208612="" class="resultContainer"><!----></div><div data-v-25208612="" role="dialog" class="v-dialog__container"><!----></div></div><!----><div data-v-25208612="" role="dialog" class="v-dialog__container"><!----></div><section data-v-25208612=""><div class="d-flex justify-space-between pt-4 pl-4 pb-4 pr-2"><span class="subheading align-self-center">Вопросы</span><a href="https://letpy.com/app/#/lessons/300.525/q/add" class="align-self-center v-btn v-btn--router v-btn--text theme--dark v-size--default primary--text"><span class="v-btn__content">Задать вопрос</span></a></div><section><div class="v-list v-sheet theme--dark"><a href="https://letpy.com/app/#/lessons/300.525/q/18074" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><div class="v-image v-responsive theme--dark"><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;"></div><div class="v-responsive__content"></div></div></div><div class="v-list-item__content"><div class="v-list-item__title">Вопрос</div><div class="v-list-item__subtitle"> Паша Узьков, <time datetime="2022-07-27T09:33:41.008Z">13 дней назад</time></div></div><div class="v-list-item__action"> 2 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17625" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">CH</span></div><div class="v-list-item__content"><div class="v-list-item__title">Вопросы по платному курсу</div><div class="v-list-item__subtitle"> chromatofor, <time datetime="2022-07-11T07:25:04.775Z">29 дней назад</time></div></div><div class="v-list-item__action"> 8 ответов </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17514" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">BU</span></div><div class="v-list-item__content"><div class="v-list-item__title">Обучение</div><div class="v-list-item__subtitle"> burlakmaksi, <time datetime="2022-07-06T08:28:28.981Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 2 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17426" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">BA</span></div><div class="v-list-item__content"><div class="v-list-item__title">Жаль почему везде премиум на том месте где интересней всего</div><div class="v-list-item__subtitle"> baxtiyorjonovixlosbek, <time datetime="2022-07-03T12:28:01.340Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 2 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17393" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">HA</span></div><div class="v-list-item__content"><div class="v-list-item__title">Обманное прохождение</div><div class="v-list-item__subtitle"> handyted4, <time datetime="2022-07-01T14:01:57.599Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 5 ответов </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17385" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><div class="v-image v-responsive theme--dark"><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;"></div><div class="v-responsive__content"></div></div></div><div class="v-list-item__content"><div class="v-list-item__title">Курс и Математика ?</div><div class="v-list-item__subtitle"> Максим Лобынцев, <time datetime="2022-07-01T10:02:22.191Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 4 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17379" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><div class="v-image v-responsive theme--dark"><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;"></div><div class="v-responsive__content"></div></div></div><div class="v-list-item__content"><div class="v-list-item__title">Python в VR?</div><div class="v-list-item__subtitle"> Максим Лобынцев, <time datetime="2022-07-01T08:57:01.122Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 1 ответ </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17264" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">MA</span></div><div class="v-list-item__content"><div class="v-list-item__title">Обучениее, оплата.</div><div class="v-list-item__subtitle"> mareshina57, <time datetime="2022-06-28T06:09:12.154Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 3 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17258" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">DA</span></div><div class="v-list-item__content"><div class="v-list-item__title">Мини редактор кода</div><div class="v-list-item__subtitle"> daniil16072010, <time datetime="2022-06-27T20:19:09.848Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 1 ответ </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17203" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">MA</span></div><div class="v-list-item__content"><div class="v-list-item__title">Удалили вопрос...</div><div class="v-list-item__subtitle"> maximplahin98, <time datetime="2022-06-26T11:57:07.170Z">около 1 месяца назад</time></div></div><div class="v-list-item__action"> 2 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17084" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">PR</span></div><div class="v-list-item__content"><div class="v-list-item__title">Проблемы с оплатой</div><div class="v-list-item__subtitle"> prmpnppgrp, <time datetime="2022-06-22T14:24:08.328Z">около 2 месяцев назад</time></div></div><div class="v-list-item__action"> 1 ответ </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/17063" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">KI</span></div><div class="v-list-item__content"><div class="v-list-item__title">Оплата</div><div class="v-list-item__subtitle"> kirill.sweet_pepper, <time datetime="2022-06-22T07:27:26.421Z">около 2 месяцев назад</time></div></div><div class="v-list-item__action"> 3 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/16910" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">20</span></div><div class="v-list-item__content"><div class="v-list-item__title">оплата</div><div class="v-list-item__subtitle"> 2003katruinka, <time datetime="2022-06-16T21:42:00.889Z">около 2 месяцев назад</time></div></div><div class="v-list-item__action"> 3 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/16491" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">ПА</span></div><div class="v-list-item__content"><div class="v-list-item__title">Установка Python</div><div class="v-list-item__subtitle"> Пантера, <time datetime="2022-06-01T15:26:35.821Z">2 месяца назад</time></div></div><div class="v-list-item__action"> 7 ответов </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/16459" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">VI</span></div><div class="v-list-item__content"><div class="v-list-item__title">Введение :)</div><div class="v-list-item__subtitle"> vip.vitem, <time datetime="2022-05-31T18:56:04.968Z">2 месяца назад</time></div></div><div class="v-list-item__action"> 4 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/15927" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">NA</span></div><div class="v-list-item__content"><div class="v-list-item__title">Оплата</div><div class="v-list-item__subtitle"> nartauamanbayev, <time datetime="2022-05-13T08:06:52.831Z">3 месяца назад</time></div></div><div class="v-list-item__action"> 2 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/15823" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">DI</span></div><div class="v-list-item__content"><div class="v-list-item__title">Заблокированы уроки хотя в 2020 году было оплачено с возможности пройти курс повторно.</div><div class="v-list-item__subtitle"> Dim, <time datetime="2022-05-09T04:13:50.308Z">3 месяца назад</time></div></div><div class="v-list-item__action"> 1 ответ </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/15637" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">МИ</span></div><div class="v-list-item__content"><div class="v-list-item__title">Visa</div><div class="v-list-item__subtitle"> Михась, <time datetime="2022-05-02T09:51:23.579Z">3 месяца назад</time></div></div><div class="v-list-item__action"> 1 ответ </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/15630" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><span class="white--text subtitle-1" style="margin: 0px auto;">DZ</span></div><div class="v-list-item__content"><div class="v-list-item__title">Уроки</div><div class="v-list-item__subtitle"> dzambaevislam, <time datetime="2022-05-02T05:41:18.114Z">3 месяца назад</time></div></div><div class="v-list-item__action"> 2 ответа </div></a><a href="https://letpy.com/app/#/lessons/300.525/q/15581" class="pl-8 v-list-item v-list-item--link theme--dark" tabindex="0"><div class="v-avatar v-list-item__avatar primary" style="height: 40px; min-width: 40px; width: 40px;"><div class="v-image v-responsive theme--dark"><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-position: center center;"></div><div class="v-responsive__content"></div></div></div><div class="v-list-item__content"><div class="v-list-item__title">Как оплатить на 1 месяц ?</div><div class="v-list-item__subtitle"> Zlaya Rediska, <time datetime="2022-04-29T13:28:46.382Z">3 месяца назад</time></div></div><div class="v-list-item__action"> 3 ответа </div></a></div><div data-v-644ea9c9="" class="infinite-loading-container"><div data-v-644ea9c9="" class="infinite-status-prompt" style="display: none;"><div data-v-644ea9c9="" class="pa-10"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular v-progress-circular--indeterminate" data-v-644ea9c9="" style="height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="21.333333333333332 21.333333333333332 42.666666666666664 42.666666666666664" style="transform: rotate(0deg);"><circle fill="transparent" cx="42.666666666666664" cy="42.666666666666664" r="20" stroke-width="2.6666666666666665" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay"></circle></svg><div class="v-progress-circular__info"></div></div></div></div> <div data-v-644ea9c9="" class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">No results :(</div> <div data-v-644ea9c9="" class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">No more data :)</div> <div data-v-644ea9c9="" class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">
+        Opps, something went wrong :(
+        <br data-v-644ea9c9=""> <button data-v-644ea9c9="" class="btn-try-infinite">Retry</button></div></div></section></section><div data-v-25208612="" class="v-overlay theme--dark" style="z-index: 5;"><div class="v-overlay__scrim" style="opacity: 0; background-color: rgb(33, 33, 33); border-color: rgb(33, 33, 33);"></div></div></section></div><div class="v-navigation-drawer__border"></div></nav><!----></section><nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--right v-navigation-drawer--temporary theme--dark" data-booted="true" style="height: 100vh; top: 0px; transform: translateX(100%); width: 500px;"><div class="v-navigation-drawer__content"><header class="pr-2 v-sheet theme--dark v-toolbar v-toolbar--dense" style="height: 48px;"><div class="v-toolbar__content" style="height: 48px;"><div class="v-toolbar__title"> Уведомления </div><div class="spacer"></div><!----><div class="spacer"></div><button type="button" class="v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></div></header><hr role="separator" aria-orientation="horizontal" class="v-divider theme--dark"><div class="notifications-container v-card v-card--flat v-sheet theme--dark"><div data-v-644ea9c9="" class="infinite-loading-container"><div data-v-644ea9c9="" class="infinite-status-prompt" style="display: none;"><div data-v-644ea9c9="" class="pa-10"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular v-progress-circular--indeterminate" data-v-644ea9c9="" style="height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="21.333333333333332 21.333333333333332 42.666666666666664 42.666666666666664" style="transform: rotate(0deg);"><circle fill="transparent" cx="42.666666666666664" cy="42.666666666666664" r="20" stroke-width="2.6666666666666665" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay"></circle></svg><div class="v-progress-circular__info"></div></div></div></div> <div data-v-644ea9c9="" class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">No results :(</div> <div data-v-644ea9c9="" class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px;">No more data :)</div> <div data-v-644ea9c9="" class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">
+        Opps, something went wrong :(
+        <br data-v-644ea9c9=""> <button data-v-644ea9c9="" class="btn-try-infinite">Retry</button></div></div></div></div><div class="v-navigation-drawer__border"></div></nav><nav data-v-c25e4f2c="" class="v-navigation-bottom-drawer" style="left: 0px; right: 0px; width: calc(100% - 0px) !important; user-select: text; transition: all 0.2s ease 0s;"><div data-v-c25e4f2c="" class="v-navigation-bottom-drawer__border" style=""></div><div data-v-c25e4f2c="" style="width: 100%; overflow-x: auto;"><ul data-v-c25e4f2c="" class="tabs"><li data-v-c25e4f2c=""> Результат </li><li data-v-c25e4f2c="" class="clickable"> Отладчик </li></ul></div><div data-v-c25e4f2c="" class="d-flex"><div data-v-c25e4f2c="" class="stdout" style="height: 158px; overflow-y: auto; width: 100%;"><pre data-v-c25e4f2c=""><span>Istagan butun son kiriting: 45
+Siz kiritgan 45 soni 2ga qoldiqsiz bo'linmaydi!
+45 soni 3ga qoldiqsiz bo'linadi
+Siz kiritgan 45 soni 4ga qoldiqsiz bo'linmaydi!
+45 soni 5ga qoldiqsiz bo'linadi
+Siz kiritgan 45 soni 6ga qoldiqsiz bo'linmaydi!
+Siz kiritgan 45 soni 7ga qoldiqsiz bo'linmaydi!
+Siz kiritgan 45 soni 8ga qoldiqsiz bo'linmaydi!
+45 soni 9ga qoldiqsiz bo'linadi
+Siz kiritgan 45 soni 10ga qoldiqsiz bo'linmaydi!
+Yangi login kiriting: muhammadkodirov
+Xush kelipsiz!
+Savatga 5ta mahsulot kiriting: 
+1 chi mahsulotni kiriting: olma
+2 chi mahsulotni kiriting: guruch
+3 chi mahsulotni kiriting: nok
+4 chi mahsulotni kiriting: ananas
+5 chi mahsulotni kiriting: tarvuz
+Quyidagi mahsulotlar do'konimizda yo'q.
+guruch
+ananas
+1chi mahsulotni kiriting: olma
+2chi mahsulotni kiriting: suv
+3chi mahsulotni kiriting: shakar
+4chi mahsulotni kiriting: guruch
+5chi mahsulotni kiriting: non
+Do'konimizda olma bor
+Do'konimizda guruch yo'q.
+Do'konimizda nok bor
+Do'konimizda ananas yo'q.
+Do'konimizda tarvuz bor
+Do'konimizda olma bor
+Do'konimizda suv yo'q.
+Do'konimizda shakar bor
+Do'konimizda guruch yo'q.
+Do'konimizda non yo'q.
+Ikkita son kiriting: 
+Birinchi sonni kiriting: 4
+Ikkinchi sonni kiriting: 5
+4&lt;5
+Yoshingizni kiriting: 20
+Kirish 20000
+Jusft son kiriting: 45
+Bu juft son emas!
+</span></pre><!----></div><!----></div></nav><div role="dialog" class="v-dialog__container"><!----></div><div role="dialog" class="v-dialog__container"><!----></div><div style="width: 0px; height: 0px;"><div class="canvas__window" style="top: 0px; left: 0px; display: none;"><div class="canvas__window_title"><a href="https://letpy.com/app/#" class="canvas__window_title__close">×</a></div><div><div id="canvasContainer"><div style="overflow: hidden; height: 350px; width: 350px;"><canvas id="letpyCanvas" width="350" height="350" style="background-color: rgb(255, 255, 255);"></canvas></div></div></div><div id="hidden_canvas" style="display: none;"></div></div><div id="virtualKeyboard" style="display: none; position: absolute; bottom: 0px; right: 0px; z-index: 100000;"><div class="virtual-keyboard-wrapper"><div class="virtual-keyboard-wrapper-row"><button onclick="window.dispatchEvent(new KeyboardEvent(&#39;keydown&#39;, {&#39;code&#39;: &#39;ArrowUp&#39;}))">↑ </button></div><div class="virtual-keyboard-wrapper-row"><button onclick="window.dispatchEvent(new KeyboardEvent(&#39;keydown&#39;, {&#39;code&#39;: &#39;ArrowLeft&#39;}))">← </button><button onclick="window.dispatchEvent(new KeyboardEvent(&#39;keydown&#39;, {&#39;code&#39;: &#39;ArrowDown&#39;}))">↓ </button><button onclick="window.dispatchEvent(new KeyboardEvent(&#39;keydown&#39;, {&#39;code&#39;: &#39;ArrowRight&#39;}))">→ </button></div></div></div></div><div></div></div><div class="v-snack v-snack--bottom v-snack--has-background v-snack--multi-line" style="padding-bottom: 0px; padding-top: 48px;"><div class="v-snack__wrapper v-sheet theme--dark" style="display: none;"><div role="status" aria-live="polite" class="v-snack__content"><div>Success</div></div><div class="v-snack__action "><button type="button" class="v-btn v-btn--text theme--dark v-size--default success--text v-snack__btn"><span class="v-btn__content"> Закрыть </span></button></div></div></div><div role="dialog" class="v-dialog__container"><!----></div><div role="dialog" class="v-dialog__container"><!----></div></div><div class="v-tooltip__content v-tooltip__content--fixed" style="left: 12px; opacity: 0; top: 51px; z-index: 8; display: none;"><span>Версия приложения 2.3.22</span></div><div data-v-7a974f1e="" class="v-tooltip__content" style="left: 563px; opacity: 0; top: 88px; z-index: 8; display: none;"><span data-v-7a974f1e=""></span></div><div data-v-7a974f1e="" class="v-tooltip__content" style="left: 656px; opacity: 0; top: 88px; z-index: 8; display: none;"><span data-v-7a974f1e=""></span></div><div data-v-7a974f1e="" class="v-tooltip__content" style="left: 12px; opacity: 0; top: 88px; z-index: 8; display: none;"><span data-v-7a974f1e=""></span></div></div><script src="./11dars_files/checkout-widget.js.Без названия"></script><script src="./11dars_files/chunk-vendors.fbbcacb0.js.Без названия"></script><script src="./11dars_files/app.bd011bea.js.Без названия"></script><input style="opacity: 0; font-size: 1px; height: 1px; width: 1px; position: absolute; top: 744px;" autocapitalize="off" spellcheck="false"><div id="hidden_output" style="display: none"></div></body></html>
